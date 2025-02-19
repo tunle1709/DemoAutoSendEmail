@@ -23,11 +23,11 @@ namespace DemoAutoSendEmail
                     );";
                 command.ExecuteNonQuery();
 
-                Console.WriteLine("Database initialized successfully!");
+                Console.WriteLine("Database đã được khởi tạo thành công!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error initializing database: {ex.Message}");
+                Console.WriteLine($"Lỗi khởi tạo database: {ex.Message}");
             }
         }
 
@@ -47,7 +47,7 @@ namespace DemoAutoSendEmail
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error checking folder: {ex.Message}");
+                Console.WriteLine($"Kiểm tra lỗi thư mục: {ex.Message}");
                 return false;
             }
         }
@@ -65,11 +65,11 @@ namespace DemoAutoSendEmail
                 command.Parameters.AddWithValue("@SentDate", DateTime.UtcNow); 
 
                 command.ExecuteNonQuery();
-                Console.WriteLine($"Marked '{folderName}' as sent.");
+                Console.WriteLine($"Đã đánh dấu '{folderName}' đã gửi.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error marking folder as sent: {ex.Message}");
+                Console.WriteLine($"Lỗi đánh dấu thư mục là đã gửi: {ex.Message}");
             }
         }
     }

@@ -26,7 +26,7 @@ namespace DemoAutoSendEmail
         {
             if (!Directory.Exists(rootFolder))
             {
-                Console.WriteLine($"Root folder '{rootFolder}' does not exist!");
+                Console.WriteLine($"Thư mục gốc '{rootFolder}' không tồn tại!");
                 return;
             }
 
@@ -35,14 +35,14 @@ namespace DemoAutoSendEmail
                 var folderName = Path.GetFileName(folder);
                 if (DatabaseConfig.IsFolderSent(folderName))
                 {
-                    Console.WriteLine($"Folder '{folderName}' was already sent. Skipping...");
+                    Console.WriteLine($"Folder '{folderName}' đã được gửi rồi. Đang bỏ qua...");
                     continue;
                 }
 
                 var images = Directory.GetFiles(folder, "*.jpg");
                 if (images.Length == 0)
                 {
-                    Console.WriteLine($"No images found in folder '{folderName}'. Skipping...");
+                    Console.WriteLine($"Không tìm thấy hình ảnh trong thư mục '{folderName}'. Đang bỏ qua...");
                     continue;
                 }
 
@@ -61,19 +61,19 @@ namespace DemoAutoSendEmail
                     if (SendEmailWithAttachment(folderName, zipPath))
                     {
                         DatabaseConfig.MarkFolderAsSent(folderName);
-                        Console.WriteLine($"Email sent successfully for '{folderName}'!");
+                        Console.WriteLine($"Email đã được gửi thành công cho '{folderName}'!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error processing '{folderName}': {ex.Message}");
+                    Console.WriteLine($"Xử lý lỗi '{folderName}': {ex.Message}");
                 }
                 finally
                 {
                     if (File.Exists(zipPath))
                     {
                         File.Delete(zipPath);
-                        Console.WriteLine($"Deleted ZIP: {zipPath}");
+                        Console.WriteLine($"Xóa ZIP: {zipPath}");
                     }
                 }
             }
@@ -95,7 +95,7 @@ namespace DemoAutoSendEmail
 
                 if (!File.Exists(attachmentPath))
                 {
-                    Console.WriteLine($"Attachment not found: {attachmentPath}");
+                    Console.WriteLine($"Attachment không tồn tại: {attachmentPath}");
                     return false;
                 }
 
@@ -112,7 +112,7 @@ namespace DemoAutoSendEmail
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Email sending failed: {ex.Message}");
+                Console.WriteLine($"Email gửi thất bại: {ex.Message}");
                 return false;
             }
         }
