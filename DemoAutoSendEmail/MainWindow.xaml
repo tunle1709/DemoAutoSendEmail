@@ -4,6 +4,6 @@
         Title="Auto Send Email" Height="350" Width="525">
     <Grid>
         <TextBlock Text="Auto Send Email Application" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
-        <Button Content="Check and Send Emails" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Click="CheckAndSendEmailsButton_Click"/>
+        <Button Content="Start Watching" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Click="StartWatchingButton_Click"/>
     </Grid>
 </Window>
