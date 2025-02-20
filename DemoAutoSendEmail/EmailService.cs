@@ -28,7 +28,7 @@ namespace DemoAutoSendEmail
                 {
                     From = new MailAddress(senderEmail),
                     Subject = "EHPHP24235/" + folderName + "/in",
-                    Body = $"Kính gửi: quý khách công ty SITC\n\nChúng tôi xin kính gửi quý khách hàng hỉnh ảnh của container {folderName}.\n\nTrân trọng cảm ơn.\nNam Đình Vũ Port.",
+                    Body = $"Kính gửi: quý khách công ty SITC\n\nChúng tôi xin kính gửi quý khách hàng hình ảnh của container {folderName}.\n\nTrân trọng cảm ơn.\nNam Đình Vũ Port.",
                     IsBodyHtml = false
                 };
 

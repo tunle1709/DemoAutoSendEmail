@@ -17,7 +17,6 @@ namespace DemoAutoSendEmail
         {
             InitializeComponent();
             DatabaseConfig.InitializeDatabase();
-            FolderWatcher.ProcessExistingFolders(rootFolder); // Quét lại các thư mục chưa được gửi khi khởi động
         }
 
         private void StartWatchingButton_Click(object sender, RoutedEventArgs e)
